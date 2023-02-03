@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
+import NavBar from './components/NavBar/NavBar';
+import { Outlet } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
+import Header from './components/Header/Header';
 
 function App() {
+  const [title, setTitle] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    const parsedLocation = location.pathname.replace(/\W/g, '');
+    setTitle(parsedLocation);
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container>
+      <NavBar />
+      <Header title={title} />
+      <Outlet />
+    </Grid>
   );
 }
 
