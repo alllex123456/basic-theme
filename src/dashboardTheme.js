@@ -17,7 +17,8 @@ export const dashboardTheme = createTheme({
             '"Segoe UI Emoji"',
             '"Segoe UI Symbol"',
           ].join(','),
-          fontSize: '0.875rem',
+          htmlFontSize: 10,
+          fontSize: '1rem',
           fontWeight: 600,
           borderRadius: 8.5,
           textTransform: 'none',
@@ -40,7 +41,7 @@ export const dashboardTheme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
-          fontSize: '1.7rem',
+          fontSize: '1.5rem',
         },
       },
     },

@@ -15,7 +15,7 @@ const headerStyles = {
     display: 'flex',
     flexDirection: 'column',
     backgroundColor: '#009be5',
-    padding: '20px',
+    padding: '2rem',
   },
   topRow: {
     display: 'flex',
